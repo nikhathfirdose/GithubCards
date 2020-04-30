@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Display from "./components/Display";
+import Button from "./components/Button";
+import { useState } from "react";
 function App() {
+  let [count, setCount] = useState(0);
+  let increment = (i) => setCount(count + i);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button onClickFunc={increment} value={1} />
+      <Button onClickFunc={increment} value={5} />
+      <Button onClickFunc={increment} value={10} />
+      <Button onClickFunc={increment} value={100} />
+      <Display countDisp={count} />
     </div>
   );
 }
