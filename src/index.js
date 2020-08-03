@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App"; //First example
+// import App from "./App"; //First example
 import App2 from "./App2";
 import * as serviceWorker from "./serviceWorker";
 

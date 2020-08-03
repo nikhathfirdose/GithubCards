@@ -6,10 +6,14 @@ export default class CardList extends Component {
     return (
       <div>
         <div className="cards-container">
-          <img src={this.props.list.avatar_url} className="cards-image" />
+          <img
+            alt="userimage"
+            src={this.props.lis.avatar_url}
+            className="cards-image"
+          />
           <div className="details">
-            <h2 className="card-name"> {this.props.list.name} </h2>
-            <p className="company">{this.props.list.company}</p>
+            <h2 className="card-name"> {this.props.lis.name} </h2>
+            <p className="company">Joined: {this.props.lis.created_at}</p>
           </div>
         </div>
       </div>
