@@ -1,19 +1,31 @@
-import React from "react";
-import Display from "./components/Display";
-import Button from "./components/Button";
-import { useState } from "react";
-function App() {
-  let [count, setCount] = useState(0);
-  let increment = (i) => setCount(count + i);
-  return (
-    <div>
-      <Button onClickFunc={increment} value={1} />
-      <Button onClickFunc={increment} value={5} />
-      <Button onClickFunc={increment} value={10} />
-      <Button onClickFunc={increment} value={100} />
-      <Display countDisp={count} />
-    </div>
-  );
-}
+import React, { Component } from "react";
+import Card from "./components/Card";
 
-export default App;
+const testData = [
+  {
+    name: "Dan Abramov",
+    avatar_url: "https://avatars0.githubusercontent.com/u/810438?v=4",
+    company: "Google",
+  },
+  {
+    name: "Sophie Alpert",
+    avatar_url: "https://avatars2.githubusercontent.com/u/6820?v=4",
+    company: "Humu",
+  },
+  {
+    name: "Sebastian Markbåge",
+    avatar_url: "https://avatars2.githubusercontent.com/u/63648?v=4",
+    company: "Facebook",
+  },
+];
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className="page">
+        <div>{this.props.title}</div>
+        <Card data={testData} />
+      </div>
+    );
+  }
+}
